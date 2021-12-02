@@ -1,0 +1,13 @@
+Finally, model runs well! 
+
+1.Can you tweak the error being used by the RAI controller? What happens if the integral error is simply the immediate error? Or if other integration rules are used? like Simpson's rule?
+-Yes, it is possible to tweak it. If integral error is simply immediate error, RAI can become much more volatile because there it should react on current situation and difference without taking into account past data. We can improve quality of reaction using Simpson's rule because it will be more reactive to sharp differences     
+
+2. Right now, the RAI is being modelled as a PI controller. What is required in order to turn it to a PID one? Are you able to implement a demonstration?
+-If we add derivative part controller will be more stable and will react more quickly for big movements in a short term. It is very important for quick compensation in a time of market distress
+
+3. How would you introduce events into the past and future? How should someone proceed to include shocks into the extrapolation phase? 
+-I think it would be great idea to model controller using market distress times in 2017-2018. We can done it by adjusting imput data or even model it with shocks we need
+
+4. What behavioral model would you introduce on the model? How it would modify the TokenState object? Are you able to implement it?
+- If it possible, I think it would be interesting to introduce possible changing in overcollatarisation in case of market down movements. Possibly, it can provide more stability and trust form market participant. However, it is a bit tricky to do it
